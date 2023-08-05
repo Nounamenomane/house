@@ -1,0 +1,47 @@
+.title h1 {
+    text-align: center;
+}
+
+.login {
+    margin-left: 50px;
+}
+
+.login div label {
+    color: var(--font-style-1, #363A40);
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.login input {
+    margin-left: 10px;
+    width: 590px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 1px solid rgba(107, 111, 120, 0.19);
+    background: #FFF;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+}
+.btn button {
+    margin-top: 50px;
+    width: 136.8px;
+    height: 46px;
+    padding: 8px 24px;
+    flex-shrink: 0;
+    border-radius: 28px;
+    border: 1px solid #6AC4FF;
+    color: #6AC4FF;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* 150% */
+}

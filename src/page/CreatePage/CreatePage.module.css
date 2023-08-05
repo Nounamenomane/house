@@ -1,0 +1,74 @@
+.wrapper {
+    margin: 0 50px;
+}
+
+.wrapper p {
+    color: var(--font-style-1, #363A40);
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.wrapper h5 {
+    color: var(--name-title, #434242);
+    font-family: Ubuntu;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.wrapper input {
+    width: 761px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    border: 1px solid rgba(107, 111, 120, 0.19);
+    background: #FFF;
+}
+
+.divide input {
+    width: 761px;
+    height: 96px;
+    flex-shrink: 0;
+}
+
+.connect {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.connect p {
+    color: var(--font-style-1, #363A40);
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* 150% */
+}
+
+.connect button {
+    width: 136.8px;
+    height: 46px;
+    padding: 8px 24px;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 28px;
+    border: 1px solid #6AC4FF;
+    color: #6AC4FF;
+    text-align: center;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-left: 50px;
+    /* 150% */
+}

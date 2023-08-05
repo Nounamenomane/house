@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Header from "./components/header/Header";
+import HomePage from "./page/HomePage/HomePage";
+import LoginPage from "./page/LoginPage/LoginPage";
+import DashboardPage from "./page/DashboardPage/DashboardPage";
+import CreatePage from "./page/CreatePage/CreatePage";
+import Preloader from "./components/preloader/Preloader";
+import DetailPage from "./page/detail/DetailPage";
+import AboutUs from "./page/aboutUs/AboutUs";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/login" element={<LoginPage />}></Route>
+        <Route path="/dashBoard" element={<DashboardPage />}></Route>
+        <Route path="/create-house" element={<CreatePage />}></Route>
+        <Route path="/detail/:id" element={<DetailPage />}></Route>
+        <Route path="/aboutUs" element={<AboutUs />}></Route>
+        <Route path="*" element={<h1>404</h1>}></Route>
+      </Routes>
     </div>
   );
 }
