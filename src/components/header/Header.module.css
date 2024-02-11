@@ -1,5 +1,5 @@
 .wrapper {
-    height: 70px;   
+    height: 70px;
     background-color: #25B8E7;
     display: flex;
     align-items: center;
@@ -31,4 +31,62 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+}
+
+.burger {
+    display: none;
+}
+
+@media(max-width: 780px) {
+
+    .wrapper {
+        display: block;
+    }
+
+    .menu {
+        border: 3px solid orange;
+        border-top-right-radius: 20px;
+        box-shadow: 0 0 4px 4px rgba(227, 222, 222, 0.25);
+        transition: 0.3s linear;
+        position: fixed;
+        top: 0;
+        left: -220px;
+        background-color: #FFF;
+        width: 220px;
+        height: 100vh;
+        z-index: 100;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 40px;
+    }
+
+    .burger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        left: 80%;
+    }
+
+    .burger img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .wrapper .login {
+        align-self: center;
+        color: black;
+    }
+
+    .wrapper .logo {
+        margin-left: 10px;
+        align-self: flex-start;
+    }
+
+    .active {
+        transform: translateX(100%);
+    }
 }

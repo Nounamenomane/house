@@ -1,25 +1,20 @@
-import { useState } from "react";
 import css from "./Card.module.css";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { deleteHouse } from "../../redux/AsyncThuncks";
 
 function Card(props) {
-  const [isloading, setLoading] = useState(true);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleDelete = () => {
     const res = window.confirm(
       "Вы дейтвительно хотите удалить объявление " + props.title + " ?"
     );
     if (!res) return res;
-    fetch(
-      `https://605b21f027f0050017c063b9.mockapi.io/api/v3/houses/${props.id}`,
-      {
-        method: "DELETE",
-      }
-    ).then(() => {
-      window.location.reload();
-    });
+
+    dispatch(deleteHouse(props.id));
   };
 
   const handleDetail = () => {
@@ -27,15 +22,17 @@ function Card(props) {
   };
   return (
     <div className={css.wrapper}>
-      <div>
-        <img src={props.image} alt="" />
+      <img src={props.image} alt="" />
+      <div className={css.card__info}>
         <h1>{props.title}</h1>
         <p>{props.price}$</p>
-        {props.isAdmin ? (
-          <button onClick={handleDelete}>Удалить</button>
-        ) : (
-          <button onClick={handleDetail}>Подробнее</button>
-        )}
+        <div className={css.btn}>
+          {props.isAdmin ? (
+            <button onClick={handleDelete}>Удалить</button>
+          ) : (
+            <button onClick={handleDetail}>Подробнее</button>
+          )}
+        </div>
       </div>
     </div>
   );

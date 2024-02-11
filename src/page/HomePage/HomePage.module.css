@@ -1,10 +1,23 @@
-
-.wrapper{
+.wrapper {
     margin: 0 50px;
 }
+
 .cardWrapper {
     display: flex;
-    justify-content: space-between;
+    gap: 40px;
     flex-wrap: wrap;
 
+}
+
+@media(max-width: 780px) {
+    .cardWrapper {
+        gap: 9px;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 576px) {
+    .wrapper {
+        margin: 0px;
+    }
 }

@@ -32,12 +32,13 @@
 .divide input {
     width: 761px;
     height: 96px;
-    flex-shrink: 0;
+    padding-bottom: 66px;
 }
 
 .connect {
     display: flex;
     justify-content: center;
+    gap: 30px;
     margin-top: 50px;
 }
 
@@ -57,7 +58,6 @@
     width: 136.8px;
     height: 46px;
     padding: 8px 24px;
-    gap: 10px;
     flex-shrink: 0;
     border-radius: 28px;
     border: 1px solid #6AC4FF;
@@ -69,6 +69,14 @@
     font-style: normal;
     font-weight: 500;
     line-height: 24px;
-    margin-left: 50px;
-    /* 150% */
+}
+
+@media(max-width: 825px) {
+    .wrapper {
+        margin: 0px 10px;
+    }
+
+    .wrapper input {
+        width: 100%;
+    }
 }

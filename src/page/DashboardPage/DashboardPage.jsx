@@ -2,23 +2,19 @@ import { Link } from "react-router-dom";
 import Card from "../../components/card/Card";
 import Title from "../../components/title/Title";
 import css from "./DashboardPage.module.css";
-import { useEffect, useState } from "react";
 import Preloader from "../../components/preloader/Preloader";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../redux/authSlice";
 
-function DashboardPage(props) {
-  const [house, setHouses] = useState([]);
-  const [loading, setLoading] = useState(true);
+function DashboardPage() {
 
-  const fetchData = async () => {
-    fetch("https://605b21f027f0050017c063b9.mockapi.io/api/v3/houses")
-      .finally(() => setLoading(false))
-      .then((res) => res.json())
-      .then((data) => setHouses(data));
+  const { loading, house } = useSelector((state) => state.counter)
+
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
   };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   if (loading) {
     return <Preloader />;
@@ -28,10 +24,12 @@ function DashboardPage(props) {
     <div className={css.wrapper}>
       <div className={css.kik}>
         <Title title="Мои объявления" />
+      </div>
+      <div className={css.btn}>
         <Link className={css.add} to="/create-house">
-          {" "}
           Добавить
         </Link>
+        <button className={css.logout} onClick={handleLogout}>logout</button>
       </div>
       <div className={css.cardWrapper}>
         {house &&
