@@ -1,0 +1,27 @@
+.wrapper {
+    margin: 25px 125px;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.actions {
+    display: flex;
+    grid-gap: 50px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.actions button {
+    padding: 15px 45px;
+    font-size: 22px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+@media(max-width: 576px) {
+    .wrapper {
+        margin: 150px 0px;
+    }
+}

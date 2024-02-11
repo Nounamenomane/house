@@ -1,24 +1,11 @@
-import React, { useEffect, useState } from "react";
 import Title from "../../components/title/Title";
 import css from "./HomePage.module.css";
 import Card from "../../components/card/Card";
 import Preloader from "../../components/preloader/Preloader";
+import { useSelector } from "react-redux";
 
 function HomePage() {
-  const [house, setHouses] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  const fetchData = async () => {
-    fetch("https://605b21f027f0050017c063b9.mockapi.io/api/v3/houses")
-      .finally(() => setLoading(false))
-      .then((res) => res.json())
-      .then((data) => setHouses(data));
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+  const { loading, house } = useSelector((state) => state.counter);
   if (loading) {
     return <Preloader />;
   }

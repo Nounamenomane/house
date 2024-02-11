@@ -1,18 +1,24 @@
 .wrapper {
     margin: 70px 70px;
+
 }
 
 .container {
     display: flex;
+    gap: 60px;
 
-}
-
-.imageControls {
-    width: 50%;
 }
 
 .detail {
     width: 50%;
+}
+
+.image {
+    width: 50%;
+}
+
+.image img {
+    border-radius: 10px;
 }
 
 .detail h1 {
@@ -47,28 +53,35 @@
     /* 166.667% */
 }
 
-.imageControls img {
-    width: 95%;
-    height: 85%;
-    border-radius: 10px;
-}
-
-.gap {
-    display: flex;
-    justify-content: space-around;
-}
-
 .btn {
     display: flex;
     justify-content: center;
     margin-top: 50px;
 }
 
-.btn button,
-.imageControls button {
+.btn button {
     width: 136.8px;
     height: 46px;
     padding: 8px 24px;
     border-radius: 28px;
     border: 1px solid #6AC4FF;
+}
+
+@media(max-width: 1200px) {
+    .wrapper {
+        margin: 20px;
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .detail {
+        width: 100%;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

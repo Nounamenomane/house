@@ -16,6 +16,7 @@
 }
 
 .login input {
+    padding: 10px;
     margin-left: 10px;
     width: 590px;
     height: 30px;
@@ -24,10 +25,12 @@
     border: 1px solid rgba(107, 111, 120, 0.19);
     background: #FFF;
 }
-.btn{
+
+.btn {
     display: flex;
     justify-content: center;
 }
+
 .btn button {
     margin-top: 50px;
     width: 136.8px;
@@ -44,4 +47,19 @@
     font-weight: 500;
     line-height: 24px;
     /* 150% */
+}
+
+@media(max-width: 825px) {
+    .wrapper {
+        margin-top: 40px;
+    }
+
+    .login {
+        margin-left: 10px;
+    }
+
+    .login input {
+        width: 100%;
+        margin-left: 0px;
+    }
 }
